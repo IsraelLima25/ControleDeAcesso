@@ -1,0 +1,11 @@
+C:\Users\israe\source\repos\ControleDeAcesso\ControleDeAcesso.Aplicacao\bin\Debug\ControleDeAcesso.Aplicacao.dll
+C:\Users\israe\source\repos\ControleDeAcesso\ControleDeAcesso.Aplicacao\bin\Debug\ControleDeAcesso.Aplicacao.pdb
+C:\Users\israe\source\repos\ControleDeAcesso\ControleDeAcesso.Aplicacao\bin\Debug\ControleDeAcesso.Dominio.dll
+C:\Users\israe\source\repos\ControleDeAcesso\ControleDeAcesso.Aplicacao\bin\Debug\ControleDeAcesso.Repositorio.dll
+C:\Users\israe\source\repos\ControleDeAcesso\ControleDeAcesso.Aplicacao\bin\Debug\ControleDeAcesso.Dominio.pdb
+C:\Users\israe\source\repos\ControleDeAcesso\ControleDeAcesso.Aplicacao\bin\Debug\ControleDeAcesso.Repositorio.pdb
+C:\Users\israe\source\repos\ControleDeAcesso\ControleDeAcesso.Aplicacao\obj\Debug\ControleDeAcesso.Aplicacao.csprojAssemblyReference.cache
+C:\Users\israe\source\repos\ControleDeAcesso\ControleDeAcesso.Aplicacao\obj\Debug\ControleDeAcesso.Aplicacao.csproj.CoreCompileInputs.cache
+C:\Users\israe\source\repos\ControleDeAcesso\ControleDeAcesso.Aplicacao\obj\Debug\ControleDeAcesso.Aplicacao.csproj.CopyComplete
+C:\Users\israe\source\repos\ControleDeAcesso\ControleDeAcesso.Aplicacao\obj\Debug\ControleDeAcesso.Aplicacao.dll
+C:\Users\israe\source\repos\ControleDeAcesso\ControleDeAcesso.Aplicacao\obj\Debug\ControleDeAcesso.Aplicacao.pdb

@@ -1,0 +1,39 @@
+﻿@model IEnumerable<ControleDeAcesso.Dominio.Grupo>
+
+@{
+    ViewBag.Title = "HomeGrupo";
+}
+
+<h2>@ViewBag.Titulo</h2>
+<hr/>
+<p>
+    @Html.ActionLink("Novo Grupo", "CadastrarGrupo", "Grupo")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.idGrupo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.nome)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.idGrupo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.nome)
+        </td>
+        <td>
+            @Html.ActionLink("Alterar", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Detalhar", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Excluir", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,39 @@
+﻿@model IEnumerable<ControleDeAcesso.Dominio.Permissao>
+
+@{
+    ViewBag.Title = "HomePermissao";
+}
+
+<h2>@ViewBag.Titulo</h2>
+<hr/>
+<p>
+    @Html.ActionLink("Nova Permissão", "CadastrarPermissao", "Permissao")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.idPermissao)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.nome)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.idPermissao)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.nome)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Detalhar", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Excluir", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>
