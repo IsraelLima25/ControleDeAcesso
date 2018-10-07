@@ -5,10 +5,14 @@
 }
 
 <h2> @ViewBag.Titulo </h2>
+<hr />
 
 <p>
-    @Html.ActionLink("Novo Sistema", "CadastrarSistema", "Sistema")
+    @Html.ActionLink("Novo Sistema", "CadastrarSistema", "Sistema", new { @class = "btn btn-primary pull-right" })
 </p>
+
+<br />
+<br />
 <table class="table">
     <tr>
         <th>
@@ -23,23 +27,24 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.idSistema)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.nome)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.descricao)
-        </td>
-        <td>
-            @Html.ActionLink("Alterar", "Edit", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Detalhar", "Details", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Excluir", "Delete", new { /* id=item.PrimaryKey */ })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.idSistema)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.descricao)
+            </td>
+            <td>
+                @Html.ActionLink("Alterar", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Detalhar", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Excluir", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+    }
 
 </table>

@@ -7,8 +7,10 @@
 <h2>@ViewBag.Titulo</h2>
 <hr/>
 <p>
-    @Html.ActionLink("Novo Grupo", "CadastrarGrupo", "Grupo")
+    @Html.ActionLink("Novo Grupo", "CadastrarGrupo", "Grupo", new { @class="btn btn-primary pull-right"})
 </p>
+<br/>
+<br/>
 <table class="table">
     <tr>
         <th>

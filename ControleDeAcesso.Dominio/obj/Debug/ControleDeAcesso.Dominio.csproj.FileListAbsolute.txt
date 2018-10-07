@@ -1,5 +1,6 @@
 C:\Users\israe\source\repos\ControleDeAcesso\ControleDeAcesso.Dominio\bin\Debug\ControleDeAcesso.Dominio.dll
 C:\Users\israe\source\repos\ControleDeAcesso\ControleDeAcesso.Dominio\bin\Debug\ControleDeAcesso.Dominio.pdb
+C:\Users\israe\source\repos\ControleDeAcesso\ControleDeAcesso.Dominio\obj\Debug\ControleDeAcesso.Dominio.csprojAssemblyReference.cache
 C:\Users\israe\source\repos\ControleDeAcesso\ControleDeAcesso.Dominio\obj\Debug\ControleDeAcesso.Dominio.csproj.CoreCompileInputs.cache
 C:\Users\israe\source\repos\ControleDeAcesso\ControleDeAcesso.Dominio\obj\Debug\ControleDeAcesso.Dominio.dll
 C:\Users\israe\source\repos\ControleDeAcesso\ControleDeAcesso.Dominio\obj\Debug\ControleDeAcesso.Dominio.pdb
