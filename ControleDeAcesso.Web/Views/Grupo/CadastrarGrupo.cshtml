@@ -19,26 +19,26 @@
                     @Html.ValidationMessageFor(model => model.idGrupo, "", new { @class = "text-danger" })
                 </div>
             </div>*@
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.nome, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.nome, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.nome, "", new { @class = "text-danger" })
+        <div class="container">
+            <div class="form-group">
+                @Html.LabelFor(model => model.Nome)
+                <div>
+                    @Html.EditorFor(model => model.Nome, new { htmlAttributes = new { @class = "form-control", @placeholder="Digite o nome" } })
+                    @Html.ValidationMessageFor(model => model.Nome, "", new { @class = "text-danger" })
+                </div>
             </div>
-        </div>
 
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Cadastrar" class="btn btn-primary" />
+            <div class="form-group">
+                <div>
+                    <input type="submit" value="Cadastrar" class="btn btn-primary" />
+                    @Html.ActionLink("Voltar", "HomeGrupo", "Grupo", new { @class = "btn btn-primary" })
+
+                </div>
             </div>
         </div>
     </div>
 }
 
-<div>
-    @Html.ActionLink("Voltar", "HomeGrupo","Grupo",new { @class="btn btn-primary"})
-</div>
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

@@ -18,7 +18,7 @@ namespace ControleDeAcesso.Repositorio
             SqlConnection con = Connection.getConnection();
             SqlCommand cmd = new SqlCommand("sp_grupo_ins", con);
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@nome", grupo.nome);
+            cmd.Parameters.AddWithValue("@nome", grupo.Nome);
             cmd.ExecuteNonQuery();
             Connection.closeConnection();
         }
@@ -28,8 +28,8 @@ namespace ControleDeAcesso.Repositorio
             SqlConnection con = Connection.getConnection();
             SqlCommand cmd = new SqlCommand("sp_grupo_upd", con);
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@idGrupo", grupo.idGrupo);
-            cmd.Parameters.AddWithValue("@nome", grupo.nome);
+            cmd.Parameters.AddWithValue("@idGrupo", grupo.Codigo);
+            cmd.Parameters.AddWithValue("@nome", grupo.Nome);
             cmd.ExecuteNonQuery();
             Connection.closeConnection();
 
@@ -40,7 +40,7 @@ namespace ControleDeAcesso.Repositorio
             SqlConnection con = Connection.getConnection();
             SqlCommand cmd = new SqlCommand("sp_grupo_del", con);
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@idGrupo", grupo.idGrupo);
+            cmd.Parameters.AddWithValue("@idGrupo", grupo.Codigo);
             cmd.ExecuteNonQuery();
             Connection.closeConnection();
         }
@@ -57,8 +57,8 @@ namespace ControleDeAcesso.Repositorio
             while (reader.Read())
             {
                 grupo = new Grupo();
-                grupo.idGrupo = Convert.ToInt32(reader["idGrupo"]);
-                grupo.nome = reader["nome"].ToString();
+                grupo.Codigo = Convert.ToInt32(reader["idGrupo"]);
+                grupo.Nome = reader["nome"].ToString();
                 listGrupo.Add(grupo);
             }
             reader.Close();
@@ -71,15 +71,15 @@ namespace ControleDeAcesso.Repositorio
             SqlConnection con = Connection.getConnection();
             SqlCommand cmd = new SqlCommand("sp_grupo_sel_id", con);
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@idUsuario",grupo.idGrupo);
+            cmd.Parameters.AddWithValue("@idUsuario",grupo.Codigo);
             SqlDataReader reader = cmd.ExecuteReader();
 
             while (reader.Read())
             {
-                if (Convert.ToInt32("idUsuario") == grupo.idGrupo)
+                if (Convert.ToInt32("idUsuario") == grupo.Codigo)
                 {
-                    grupoBusca.idGrupo = Convert.ToInt32("idGrupo");
-                    grupoBusca.nome = reader["nome"].ToString();
+                    grupoBusca.Codigo = Convert.ToInt32("idGrupo");
+                    grupoBusca.Nome = reader["nome"].ToString();
                 }
             }
             reader.Close();

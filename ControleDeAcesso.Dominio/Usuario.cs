@@ -8,9 +8,9 @@ namespace ControleDeAcesso.Dominio
 {
     public class Usuario
     {
-        public int idUsuario { get; set; }
-        public string email { get; set; }
-        public string senha { get; set; }
+        public int Codigo { get; set; }
+        public string Email { get; set; }
+        public string Senha { get; set; }
 
     }
 }

@@ -8,8 +8,8 @@ namespace ControleDeAcesso.Dominio
 {
     public class Sistema
     {
-        public int idSistema { get; set; }
-        public string nome { get; set; }
-        public string descricao { get; set; }
+        public int Codigo { get; set; }
+        public string Nome { get; set; }
+        public string Descricao { get; set; }
     }
 }

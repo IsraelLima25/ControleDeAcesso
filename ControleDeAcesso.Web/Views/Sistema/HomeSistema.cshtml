@@ -13,38 +13,42 @@
 
 <br />
 <br />
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.idSistema)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.nome)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.descricao)
-        </th>
-        <th></th>
-    </tr>
-
-    @foreach (var item in Model)
-    {
+<div class="panel panel-primary">
+    <div class="panel-heading">
+    </div>
+    <table class="table table-bordered table-responsive table-hover text-center">
         <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.idSistema)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.nome)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.descricao)
-            </td>
-            <td>
-                @Html.ActionLink("Alterar", "Edit", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Detalhar", "Details", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Excluir", "Delete", new { /* id=item.PrimaryKey */ })
-            </td>
+            <th class="text-center">
+                @Html.DisplayNameFor(model => model.Codigo)
+            </th>
+            <th class="text-center">
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+            <th class="text-center">
+                @Html.DisplayNameFor(model => model.Descricao)
+            </th>
+            <th></th>
         </tr>
-    }
 
-</table>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Codigo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Descricao)
+                </td>
+                <td>
+                    @Html.ActionLink("Detalhes", "Edit", new { /* id=item.PrimaryKey */@class = "btn btn-primary" })
+                    @*@Html.ActionLink("Detalhar", "Details", new { /* id=item.PrimaryKey */ }) |
+                        @Html.ActionLink("Excluir", "Delete", new { /* id=item.PrimaryKey */ })*@
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>

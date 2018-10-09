@@ -15,8 +15,8 @@ namespace ControleDeAcesso.Repositorio
             SqlConnection con = Connection.getConnection();
             SqlCommand cmd = new SqlCommand("sp_usuario_ins", con);
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@email", usuario.email);
-            cmd.Parameters.AddWithValue("@senha", usuario.senha);
+            cmd.Parameters.AddWithValue("@email", usuario.Email);
+            cmd.Parameters.AddWithValue("@senha", usuario.Senha);
             cmd.ExecuteNonQuery();
             Connection.closeConnection();
         }
@@ -25,9 +25,9 @@ namespace ControleDeAcesso.Repositorio
             SqlConnection con = Connection.getConnection();
             SqlCommand cmd = new SqlCommand("sp_usuario_upd", con);
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@idUsuario", usuario.idUsuario);
-            cmd.Parameters.AddWithValue("@email", usuario.email);
-            cmd.Parameters.AddWithValue("@senha", usuario.senha);
+            cmd.Parameters.AddWithValue("@idUsuario", usuario.Codigo);
+            cmd.Parameters.AddWithValue("@email", usuario.Email);
+            cmd.Parameters.AddWithValue("@senha", usuario.Senha);
             int qtdLinhasAfetadas = cmd.ExecuteNonQuery();
             Connection.closeConnection();
         }
@@ -37,7 +37,7 @@ namespace ControleDeAcesso.Repositorio
             SqlConnection con = Connection.getConnection();
             SqlCommand cmd = new SqlCommand("sp_usuario_del", con);
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@idUsuario", usuario.idUsuario);
+            cmd.Parameters.AddWithValue("@idUsuario", usuario.Codigo);
             cmd.ExecuteNonQuery();
             Connection.closeConnection();
         }
@@ -54,9 +54,9 @@ namespace ControleDeAcesso.Repositorio
             while (reader.Read())
             {
                 user = new Usuario();
-                user.idUsuario = Convert.ToInt32(reader["idUsuario"]);
-                user.email = reader["email"].ToString();
-                user.senha = reader["senha"].ToString();
+                user.Codigo = Convert.ToInt32(reader["idUsuario"]);
+                user.Email = reader["email"].ToString();
+                user.Senha = reader["senha"].ToString();
                 listUsuarios.Add(user);
             }
             reader.Close();
@@ -70,14 +70,14 @@ namespace ControleDeAcesso.Repositorio
             SqlConnection con = Connection.getConnection();
             SqlCommand cmd = new SqlCommand("sp_usuario_sel_id", con);
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@idUsuario", usuario.idUsuario);
+            cmd.Parameters.AddWithValue("@idUsuario", usuario.Codigo);
             SqlDataReader reader = cmd.ExecuteReader();
 
             while (reader.Read())
             {
-                usuarioBusca.idUsuario = Convert.ToInt32(reader["idUsuario"]);
-                usuarioBusca.email = reader["email"].ToString();
-                usuarioBusca.senha = reader["senha"].ToString();
+                usuarioBusca.Codigo = Convert.ToInt32(reader["idUsuario"]);
+                usuarioBusca.Email = reader["email"].ToString();
+                usuarioBusca.Senha = reader["senha"].ToString();
 
             }
 

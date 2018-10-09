@@ -8,7 +8,7 @@
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-default navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -30,12 +30,33 @@
         </div>
     </div>
     <br />
-    <br />
+    
     <div class="container body-content">
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - Controle de Acesso</p>
+            @*<p>&copy; @DateTime.Now.Year - Controle de Acesso</p>*@
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <p>
+                            <p>&copy; 2018 - Controle de Acesso</p>
+                        </p>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <p>
+                            <p>v1.0.0</p>
+                        </p>
+
+                    </div>
+                    <div class="col-md-4 text-right">
+
+                        <p>
+                            <p>&copy; security</p>
+                        </p>
+                    </div>
+                </div>
+            </div>
         </footer>
     </div>
 

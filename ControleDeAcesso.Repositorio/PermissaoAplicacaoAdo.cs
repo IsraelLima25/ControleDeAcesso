@@ -18,7 +18,7 @@ namespace ControleDeAcesso.Repositorio
             SqlConnection con = Connection.getConnection();
             SqlCommand cmd = new SqlCommand("sp_permissao_ins", con);
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@nome", permissao.nome);
+            cmd.Parameters.AddWithValue("@nome", permissao.Nome);
             cmd.ExecuteNonQuery();
             Connection.closeConnection();
         }
@@ -28,8 +28,8 @@ namespace ControleDeAcesso.Repositorio
             SqlConnection con = Connection.getConnection();
             SqlCommand cmd = new SqlCommand("sp_permissao_upd", con);
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@idPermissao", permissao.idPermissao);
-            cmd.Parameters.AddWithValue("@nome", permissao.nome);
+            cmd.Parameters.AddWithValue("@idPermissao", permissao.Codigo);
+            cmd.Parameters.AddWithValue("@nome", permissao.Nome);
             cmd.ExecuteNonQuery();
             Connection.closeConnection();
 
@@ -40,7 +40,7 @@ namespace ControleDeAcesso.Repositorio
             SqlConnection con = Connection.getConnection();
             SqlCommand cmd = new SqlCommand("sp_permissao_del", con);
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@idPermissao", permissao.idPermissao);
+            cmd.Parameters.AddWithValue("@idPermissao", permissao.Codigo);
             cmd.ExecuteNonQuery();
             Connection.closeConnection();
         }
@@ -57,8 +57,8 @@ namespace ControleDeAcesso.Repositorio
             while (reader.Read())
             {
                 permissao = new Permissao();
-                permissao.idPermissao = Convert.ToInt32(reader["idPermissao"]);
-                permissao.nome = reader["nome"].ToString();
+                permissao.Codigo = Convert.ToInt32(reader["idPermissao"]);
+                permissao.Nome = reader["nome"].ToString();
                 listPermissao.Add(permissao);
             }
             reader.Close();
@@ -76,10 +76,10 @@ namespace ControleDeAcesso.Repositorio
 
             if (reader.Read())
             {
-                if (Convert.ToInt32(reader[0]) == permissao.idPermissao)
+                if (Convert.ToInt32(reader[0]) == permissao.Codigo)
                 {
-                    permissaoSearch.idPermissao = Convert.ToInt32(reader["idPermissao"]);
-                    permissaoSearch.nome = reader["nome"].ToString();
+                    permissaoSearch.Codigo = Convert.ToInt32(reader["idPermissao"]);
+                    permissaoSearch.Nome = reader["nome"].ToString();
                 }
             }
             reader.Close();

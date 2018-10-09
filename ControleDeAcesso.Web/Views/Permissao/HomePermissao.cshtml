@@ -5,37 +5,42 @@
 }
 
 <h2>@ViewBag.Titulo</h2>
-<hr/>
+<hr />
 <p>
     @Html.ActionLink("Nova Permissão", "CadastrarPermissao", "Permissao", new { @class = "btn btn-primary pull-right" })
 </p>
-<br/>
 <br />
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.idPermissao)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.nome)
-        </th>
-        <th></th>
-    </tr>
+<br />
+<div class="panel panel-primary">
+    <div class="panel-heading">
+    </div>
+    <table class="table table-bordered table-responsive table-hover text-center">
+        <tr>
+            <th class="text-center">
+                @Html.DisplayNameFor(model => model.Codigo)
+            </th>
+            <th class="text-center">
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+            <th></th>
+        </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.idPermissao)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.nome)
-        </td>
-        <td>
-            @Html.ActionLink("Editar", "Edit", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Detalhar", "Details", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Excluir", "Delete", new { /* id=item.PrimaryKey */ })
-        </td>
-    </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td class="text-center">
+                    @Html.DisplayFor(modelItem => item.Codigo)
+                </td>
+                <td class="text-center">
+                    @Html.DisplayFor(modelItem => item.Nome)
+                </td>
+                <td class="text-center">
+                    @Html.ActionLink("Detalhes", "Edit", new { /* id=item.PrimaryKey */@class = "btn btn-primary" })
+                    @*@Html.ActionLink("Detalhar", "Details", new { /* id=item.PrimaryKey */ }) |
+                        @Html.ActionLink("Excluir", "Delete", new { /* id=item.PrimaryKey */ })*@
+                </td>
+            </tr>
+        }
 
-</table>
+    </table>
+</div>

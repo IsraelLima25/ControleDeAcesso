@@ -19,8 +19,8 @@ namespace ControleDeAcesso.Repositorio
             SqlConnection con = Connection.getConnection();
             SqlCommand cmd = new SqlCommand("sp_sistema_ins", con);
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@nome", sistema.nome);
-            cmd.Parameters.AddWithValue("@descricao", sistema.descricao);
+            cmd.Parameters.AddWithValue("@nome", sistema.Nome);
+            cmd.Parameters.AddWithValue("@descricao", sistema.Descricao);
             cmd.ExecuteNonQuery();
             Connection.closeConnection();
         }
@@ -30,8 +30,8 @@ namespace ControleDeAcesso.Repositorio
             SqlConnection con = Connection.getConnection();
             SqlCommand cmd = new SqlCommand("sp_sistema_upd", con);
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@idSistema", sistema.idSistema);
-            cmd.Parameters.AddWithValue("@nome", sistema.nome);
+            cmd.Parameters.AddWithValue("@idSistema", sistema.Codigo);
+            cmd.Parameters.AddWithValue("@nome", sistema.Nome);
             cmd.ExecuteNonQuery();
             Connection.closeConnection();
         }
@@ -41,7 +41,7 @@ namespace ControleDeAcesso.Repositorio
             SqlConnection con = Connection.getConnection();
             SqlCommand cmd = new SqlCommand("sp_sistema_del", con);
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@idSistema", sistema.idSistema);
+            cmd.Parameters.AddWithValue("@idSistema", sistema.Codigo);
             int qtdLinhasAfetadas = cmd.ExecuteNonQuery();
             Connection.closeConnection();
 
@@ -59,9 +59,9 @@ namespace ControleDeAcesso.Repositorio
             while (reader.Read())
             {
                 sistema = new Sistema();
-                sistema.idSistema = Convert.ToInt32(reader["idSistema"]);
-                sistema.nome = reader["nome"].ToString();
-                sistema.descricao = reader["descricao"].ToString();
+                sistema.Codigo = Convert.ToInt32(reader["idSistema"]);
+                sistema.Nome = reader["nome"].ToString();
+                sistema.Descricao = reader["descricao"].ToString();
 
                 listSistemas.Add(sistema);
             }
@@ -80,10 +80,10 @@ namespace ControleDeAcesso.Repositorio
 
             while (reader.Read())
             {
-                if (Convert.ToInt32(reader["idSistema"]) == sistema.idSistema)
+                if (Convert.ToInt32(reader["idSistema"]) == sistema.Codigo)
                 {
-                    sistemaSearch.idSistema = Convert.ToInt32(reader["idSistema"]);
-                    sistemaSearch.nome = reader["nome"].ToString();
+                    sistemaSearch.Codigo = Convert.ToInt32(reader["idSistema"]);
+                    sistemaSearch.Nome = reader["nome"].ToString();
                 }
             }
             reader.Close();

@@ -8,7 +8,7 @@ namespace ControleDeAcesso.Dominio
 {
     public class Permissao
     {
-        public int idPermissao { get; set; }
-        public string nome { get; set; }
+        public int Codigo { get; set; }
+        public string Nome { get; set; }
     }
 }
